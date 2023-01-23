@@ -1,0 +1,5 @@
+<launch>
+    <node name="bla0" pkg="test_pub_sub" type="talker.py"/>
+    <node name="bla2" pkg="test_pub_sub" type="listener.py"/>
+    <node name="grapher" pkg="rqt_graph" type="rqt_graph"/>
+</launch>

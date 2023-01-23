@@ -1,0 +1,7 @@
+<launch>
+    <arg name="node_start_delay" default="2.0"/>
+    <include file="$(find kobuki_gazebo)/launch/kobuki_empty_world.launch" />
+    <node name="two_pt_nav" pkg="test_pub_sub" type="two_pt_ctrl.py" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " output="screen"/>
+    <node name="way_pt_gen" pkg="test_pub_sub" type="goal_generator.py" launch-prefix="bash -c 'sleep $(arg node_start_delay); $0 $@' " output="screen"/>
+    <node name="grapher" pkg="rqt_graph" type="rqt_graph"/>
+</launch>

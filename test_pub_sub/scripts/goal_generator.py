@@ -6,7 +6,7 @@ from math import cos, sin, pi
 
 # Global var
 flag_reached= False
-delta = 0.2
+delta = 0.19
 goal_x = 0
 goal_y = 0
 

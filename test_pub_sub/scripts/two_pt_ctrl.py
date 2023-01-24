@@ -111,8 +111,8 @@ def listener():
 
                 print("Errors :\t{:0.3f}\t{:0.2f}  {:0.2f}\t{:0.3f}".format(e_dist, theta_r, ref_angle, e_angular))
                 my_msg = Twist()
-                my_msg.linear.x = saturate(e_dist, 0.25)
-                my_msg.angular.z = (saturate(e_angular, 0.3))
+                my_msg.linear.x = saturate(e_dist, 0.17)
+                my_msg.angular.z = (saturate(e_angular, 0.35))
                 pub.publish(my_msg)
             else:
                 log_ct += 1

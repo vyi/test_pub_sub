@@ -10,6 +10,11 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 from tf.transformations import euler_from_quaternion
 
+## plot settings
+Ylimit = 6
+Xlimit = 6
+
+
 class DynamicUpdate():
     def __init__(self, fig, ax):
         self.xdata=[]
@@ -92,8 +97,8 @@ def process(bot_name):
     #pub = rospy.Publisher('/{}/cmd_vel'.format(bot_name), Twist, queue_size=10)
     rate = rospy.Rate(3) # 10hz
     lopcount = 0
-    plt.xlim([-5,5])
-    plt.ylim([-5,5])
+    plt.xlim([-Xlimit, Xlimit])
+    plt.ylim([-Ylimit, Ylimit])
     while not rospy.is_shutdown():
         plot.update()
         rate.sleep()
